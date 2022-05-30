@@ -21,47 +21,69 @@
                 </div>
               </div>
             </div>
+            <div class="advance-search">
+              <span class="desc">ADVANCED SEARCH</span>
+              <div class="row">
+                <div class="input-field">
+                  <div class="input-select">
+                    <select data-trigger="" name="choices-single-defaul">
+                      <option placeholder="" value="">Search Engine</option>
+                      <option>Haystack</option>
+                      <option>Elastic</option>
+                    </select>
+                  </div>
+                </div>
+              <div class="row third">
+                <div class="input-field">
+                  <div class="result-count">
+                    <span>108 </span>results</div>
+                  <div class="group-btn">
+                    <button class="btn-delete" id="delete">RESET</button>
+                    <button class="btn-search">SEARCH</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3> <span style="color: #878787">Search with Haystack? <input type="checkbox" name="check" value="True" class="toggle"></span></h3>
         </form>
       </div>
       <script src="static/js/extention/choices.js"></script>
       <script>
         const customSelects = document.querySelectorAll("select");
-      const deleteBtn = document.getElementById('delete')
-      const choices = new Choices('select',
-      {
-        searchEnabled: false,
-        itemSelectText: '',
-        removeItemButton: true,
-      });
-      for (let i = 0; i < customSelects.length; i++)
-      {
-        customSelects[i].addEventListener('addItem', function(event)
+        const deleteBtn = document.getElementById('delete')
+        const choices = new Choices('select',
         {
-          if (event.detail.value)
-          {
-            let parent = this.parentNode.parentNode
-            parent.classList.add('valid')
-            parent.classList.remove('invalid')
-          }
-          else
-          {
-            let parent = this.parentNode.parentNode
-            parent.classList.add('invalid')
-            parent.classList.remove('valid')
-          }
-        }, false);
-      }
-      deleteBtn.addEventListener("click", function(e)
-      {
-        e.preventDefault()
-        const deleteAll = document.querySelectorAll('.choices__button')
-        for (let i = 0; i < deleteAll.length; i++)
+          searchEnabled: false,
+          itemSelectText: '',
+          removeItemButton: true,
+        });
+        for (let i = 0; i < customSelects.length; i++)
         {
-          deleteAll[i].click();
+          customSelects[i].addEventListener('addItem', function(event)
+          {
+            if (event.detail.value)
+            {
+              let parent = this.parentNode.parentNode
+              parent.classList.add('valid')
+              parent.classList.remove('invalid')
+            }
+            else
+            {
+              let parent = this.parentNode.parentNode
+              parent.classList.add('invalid')
+              parent.classList.remove('valid')
+            }
+          }, false);
         }
-      });
+        deleteBtn.addEventListener("click", function(e)
+        {
+          e.preventDefault()
+          const deleteAll = document.querySelectorAll('.choices__button')
+          for (let i = 0; i < deleteAll.length; i++)
+          {
+            deleteAll[i].click();
+          }
+        });
 
       </script>
     </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

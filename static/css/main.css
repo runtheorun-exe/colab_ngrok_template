@@ -874,6 +874,7 @@ legend {
 }
 
 .s010 form .inner-form .input-field .btn-search {
+  right: 0%;
   min-width: 100px;
   height: 40px;
   padding: 0 15px;
