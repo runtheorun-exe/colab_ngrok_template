@@ -29,9 +29,9 @@
             <th>Date:</th>
             <th>Scheduled:</th>
         </tr>
-        {% for day in working_days %}
+        {% for result in data %}
     <tr>
-        <td>{{day}}</td>  {# <- not working_days #}
+        <td>{{result}}</td>
     </tr>
     {% endfor %}
     </table>
