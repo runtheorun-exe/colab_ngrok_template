@@ -35,16 +35,16 @@
                 </div>
           <div class="row third">
             <div class="input-field">
-               <table>
+              <div class="group-btn">
+                <button class="btn-delete" id="delete">RESET</button>
+                <button class="btn-search">SEARCH</button>
+                <table>
                   {% for result in data %}
                   <tr>
                       <td>{{result|safe}}</td>
                   </tr>
                   {% endfor %}
               </table>
-              <div class="group-btn">
-                <button class="btn-delete" id="delete">RESET</button>
-                <button class="btn-search">SEARCH</button>
               </div>
             </div>
           </div>
